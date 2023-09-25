@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8"/>
+	<title> EfEs </title>
+</head>
+<body>
+	<h1 style="color:cyan; font-family:Agency FB"> Hesap Makinesi </h1>
+	<div style="background-color:gray" class="Islemler" weight="12px" height="15px">
+	<h3 style="color:magenta; font-family:Agency FB; background-color:black"> İşlemler </h3>
+	<input id="toplama" type="radio" name="mod" checked="true"> Toplama </br>
+	<input id="cikarma" type="radio" name="mod"> Çıkarma </br>
+	<input id="carpma" type="radio" name="mod"> Çarpma </br>
+	<input id="bolme" type="radio" name="mod"> Bölme </br>
+	<input id="mod-al" type="radio" name="mod"> Mod Al </br>
+	<input id="us-al" type="radio" name="mod"> Üs Al </br>
+	<div style="background-color:orange" class="baslık-kısmı">
+	<h4 style="background-color:blue; font-family:Agency FB; color:white"> Sayılar </h4>
+	<div style="background-color:orange" class="sayi1-kısmı">
+	<label id="label1" style="font-family:calibri"> 1.Sayıyı Girin </label>
+	<input id="sayi1" type="text" style="font-family:calibri">
+	<div style="background-color:orange" class="sayi2-kısmı">
+	<label id="label2" style="font-family:calibri"> 2.Sayıyı Girin </label>
+	<input id="sayi2" type="text" style="font-family:calibri">
+	<div style="background-color:white" class="son-line">
+	<p></p>
+	<p></p>
+	<input id="hesapla" type="button" value="Hesapla" onclick="Islemler()" style="color:gray">
+<script>
+	function Islemler()
+	{
+		
+		var Sayi1=Number(document.getElementById("sayi1").value);
+		var Sayi2=Number(document.getElementById("sayi2").value);
+		var sonuc;
+		if(document.getElementById("toplama").checked==true)
+		{
+			sonuc=Sayi1+Sayi2;
+			alert("Sonuç: "+sonuc);
+		}
+		else if(document.getElementById("cikarma").checked==true)
+		{
+			sonuc=Sayi1-Sayi2;
+			alert("Sonuç: "+sonuc);
+		}
+		else if(document.getElementById("carpma").checked==true)
+		{
+			sonuc=Sayi1*Sayi2;
+			alert("Sonuç: "+sonuc);
+		}
+		else if(document.getElementById("bolme").checked==true)
+		{
+			if(Sayi1==0 || Sayi2==0)
+			{
+				alert("Sıfıra Bölünemez");
+			}
+			else
+			{
+				sonuc=Sayi1/Sayi2;
+				alert("Sonuç: "+sonuc);
+			}
+		}
+		else if(document.getElementById("mod-al").checked==true)
+		{
+			sonuc=Sayi1%Sayi2;
+			alert("Sonuç: "+sonuc);
+		}
+		else if(document.getElementById("us-al").checked==true)
+		{
+			sonuc=Sayi1**Sayi2;
+			alert("Sonuç: "+sonuc);
+		}
+	}
+</script>
+</body>
+</html>
